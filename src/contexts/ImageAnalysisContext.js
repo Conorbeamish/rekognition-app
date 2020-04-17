@@ -5,10 +5,10 @@ export const ImageAnalysisContext = createContext();
 
 const ImageAnalysisProvider = (props) => {
 
-    const [imageData, dispatch] = useReducer(imageAnalysisReducer, [])
+    const [imageData, dispatchImage] = useReducer(imageAnalysisReducer, [])
 
     return ( 
-        <ImageAnalysisContext.Provider value ={{imageData, dispatch}} >
+        <ImageAnalysisContext.Provider value ={{imageData, dispatchImage}} >
             {props.children}
         </ImageAnalysisContext.Provider>
      );
