@@ -12,8 +12,8 @@ function App() {
       <Navbar />
       <IsLoadingContextProvider>
         <ImageAnalysisProvider>
-          <ImageAnalysis />
           <SearchForm />
+          <ImageAnalysis />  
         </ImageAnalysisProvider>
       </IsLoadingContextProvider>
     </div>

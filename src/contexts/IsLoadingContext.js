@@ -5,7 +5,7 @@ export const IsLoadingContext = createContext();
 
 const IsLoadingProvider = (props) => {
     const [isLoading, dispatchLoading] = useReducer(
-        isLoadingReducer, [false]
+        isLoadingReducer, false
     )
     return(
         <IsLoadingContext.Provider value={{isLoading, dispatchLoading}}>

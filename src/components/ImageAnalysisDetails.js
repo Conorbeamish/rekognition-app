@@ -5,9 +5,12 @@ const ImageAnalysisDetails = ({label}) => {
     const confidence = (Math.round(label.Confidence* 100) / 100).toFixed(2);
 
     return ( 
-        <li>
-            {label.Name} : {confidence}%
-        </li>
+        <div className="label">
+            <div className="label-details">{label.Name} : {confidence}%</div>
+            <div className="progress-bar-container" >
+                <div className="progress-bar" style={{width: `${confidence - 50}%`}}></div>
+            </div>
+        </div>
      );
 }
  
