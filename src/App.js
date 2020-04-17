@@ -1,9 +1,20 @@
 import React from 'react';
+import Navbar from "./components/Navbar";
+import ImageAnalysis from "./components/ImageAnalysis"
+import SearchForm from "./components/SearchForm";
+import ImageAnalysisProvider from './contexts/ImageAnalysisContext';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>HELLO</h1>
+      <Navbar />
+
+      <ImageAnalysisProvider>
+        <ImageAnalysis />
+        <SearchForm />
+      </ImageAnalysisProvider>
+
     </div>
   );
 }
