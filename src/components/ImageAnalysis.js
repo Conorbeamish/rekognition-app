@@ -1,26 +1,17 @@
-import React, {useContext} from 'react';
-import ImageAnalysisDetails from "../components/ImageAnalysisDetails";
-import {ImageAnalysisContext} from "../contexts/ImageAnalysisContext";
-import {IsLoadingContext} from "../contexts/IsLoadingContext";
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
 
-const ImageAnalysis = () => {
-    const {imageData} = useContext(ImageAnalysisContext);
-    const {isLoading} = useContext(IsLoadingContext);
-    return imageData.url? (
-        <div class="analysis">
-            <img className="analysis-image" src={imageData.url}></img>
-            <div>
-                {imageData.resData.Labels.map(label => {
-                    return(<ImageAnalysisDetails label={label} key={uuidv4()} />)
-                })}
+const ImageAnalysis = ({label}) => {
+    //Take confidence to 2 decimal places
+    const confidence = (Math.round(label.Confidence* 100) / 100).toFixed(2);
+
+    return ( 
+        <div className="label">
+            <div className="label-details">{label.Name} : {confidence}%</div>
+            <div className="progress-bar-container" >
+                <div className="progress-bar" style={{width: `${confidence}%`}}></div>
             </div>
         </div>
-    ) : (
-       <div>
-           {isLoading ? <div>Loading </div> : <img className="analysis-image" ></img>}
-       </div>
-    )
+     );
 }
  
 export default ImageAnalysis;

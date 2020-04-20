@@ -13,7 +13,6 @@ const SearchForm = () => {
         e.preventDefault()
         setErrors("")
         dispatchLoading({type: "SET_LOADING_TRUE"});
-        dispatchImage({type: "REMOVE_IMG_DATA"});
 
         axios.post("/", {url})
         .then((res) => {
@@ -33,13 +32,15 @@ const SearchForm = () => {
 
 
     return ( 
-        <form onSubmit={handleSubmit}>
-            {errors.length > 0 && (
-                <div>{errors}</div>
-            )}
-            <input type="text" onChange = {handleChange} value={url}/>
-            <button type="submit">Submit</button> 
-        </form>
+        <div className="search">
+            <form onSubmit={handleSubmit}>
+                {errors.length > 0 && (
+                    <div>{errors}</div>
+                )}
+                <input type="text" onChange = {handleChange} value={url}/>
+                <button type="submit">Submit</button> 
+            </form>
+        </div>
     );
 }
  

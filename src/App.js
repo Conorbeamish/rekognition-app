@@ -1,9 +1,8 @@
 import React from 'react';
 import Navbar from "./components/Navbar";
-import ImageAnalysis from "./components/ImageAnalysis"
-import SearchForm from "./components/SearchForm";
 import ImageAnalysisProvider from './contexts/ImageAnalysisContext';
 import IsLoadingContextProvider from './contexts/IsLoadingContext';
+import Homepage from "./components/Homepage.js";
 
 
 function App() {
@@ -12,8 +11,7 @@ function App() {
       <Navbar />
       <IsLoadingContextProvider>
         <ImageAnalysisProvider>
-          <SearchForm />
-          <ImageAnalysis />  
+          <Homepage />  
         </ImageAnalysisProvider>
       </IsLoadingContextProvider>
     </div>
