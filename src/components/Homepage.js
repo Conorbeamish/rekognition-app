@@ -9,6 +9,7 @@ const Homepage = () => {
             <div className="ls-container">
                 <Image />
             </div>
+            
             <div className="rs-container">
                 <SearchForm />
                 <Info/>

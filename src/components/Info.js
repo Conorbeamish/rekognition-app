@@ -9,6 +9,7 @@ const Info = () => {
     const {isLoading} = useContext(IsLoadingContext);
     return imageData.url? (
         <div className="info">
+            <h3>Analysis</h3>
             <div>
                 {imageData.resData.Labels.map(label => {
                     return(<ImageAnalysis label={label} key={uuidv4()} />)
@@ -17,7 +18,8 @@ const Info = () => {
         </div>
     ) : (
        <div className="info">
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus, augue vitae tincidunt fringilla, dui justo porta velit, vel sagittis quam turpis sed erat. Integer consequat magna massa, laoreet mollis neque porttitor vitae. Nam a suscipit dui. Vestibulum vulputate neque ut ultrices varius. Vestibulum aliquam ipsum eros, ut maximus ex accumsan eget. Donec suscipit massa tincidunt ex maximus imperdiet. Praesent euismod sapien nec lorem finibus, et dictum leo fringilla. Cras posuere malesuada dictum. Nulla dolor neque, facilisis id urna eget, lobortis ultricies orci. Integer urna lectus, sodales eget dictum vel, facilisis et tellus. Sed ac sapien tempor, sodales odio ut, posuere turpis. Duis feugiat ex nec mollis vulputate. Mauris et placerat neque. Vestibulum volutpat nisi sed dui interdum, et ornare sapien rutrum. Pellentesque suscipit, odio vitae hendrerit convallis, nulla mi laoreet lorem, sit amet vestibulum sapien enim at metus.
+           <h3>Analysis</h3>
+           This application..........
        </div>
     )
 }

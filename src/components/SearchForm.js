@@ -33,11 +33,11 @@ const SearchForm = () => {
 
     return ( 
         <div className="search">
+            <h3>Search for an image</h3>
+            <p>To analyse an image simply input the image url below, you may have to right click an image you find online and select "copy image url".</p>
+            <div style={{height: "1rem"}}>{errors}</div>
             <form onSubmit={handleSubmit}>
-                {errors.length > 0 && (
-                    <div>{errors}</div>
-                )}
-                <input type="text" onChange = {handleChange} value={url}/>
+                <input type="text" onChange = {handleChange} value={url} placeholder="Enter image url..."/>
                 <button type="submit">Submit</button> 
             </form>
         </div>
