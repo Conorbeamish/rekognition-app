@@ -7,11 +7,13 @@ import { v4 as uuidv4 } from 'uuid';
 const Info = () => {
     const {imageData} = useContext(ImageAnalysisContext);
     const {isLoading} = useContext(IsLoadingContext);
+    const {resData, maxLabels, minConfidence} = imageData;
     return imageData.url? (
         <div className="info">
             <h3>Analysis</h3>
+            <div className="info-params">Max Labels: {maxLabels} | Min confidence: {minConfidence}% </div>
             <div>
-                {imageData.resData.Labels.map(label => {
+                {resData.Labels.map(label => {
                     return(<ImageAnalysis label={label} key={uuidv4()} />)
                 })}
             </div>
@@ -19,7 +21,8 @@ const Info = () => {
     ) : (
        <div className="info">
            <h3>Analysis</h3>
-           This application..........
+           <p>This application is built using AWS Rekognition, which uses machine learning to identify labels in images</p>
+           <p>The results are given with a percentage of confidence</p>
        </div>
     )
 }
