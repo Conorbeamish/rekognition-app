@@ -44,8 +44,11 @@ const SearchForm = () => {
             <p>To get started simply input the image url below, you may have to right click an image you find online and select "copy image url".</p>
             <div style={{height: "1rem"}}>{errors}</div>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="url" onChange = {handleChange} value={data.url} placeholder="Enter image url..."/>
+                <label for="url">Image Url: </label>
+                <input type="text" name="url" onChange = {handleChange} value={data.url} placeholder="Enter image url..." autocomplete="off"/>
+                <label for="maxLabels">Max Labels:</label>
                 <input type="number" name="maxLabels" min="1" max="50" onChange = {handleChange} value={data.maxLabels}/>
+                <label for="minConfidence">Min Confidence:</label>
                 <input type="number" name="minConfidence" min="1" max="100" onChange = {handleChange} value={data.minConfidence}/>
                 <button type="submit">Submit</button> 
             </form>

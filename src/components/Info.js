@@ -1,12 +1,10 @@
 import React, {useContext} from 'react';
 import ImageAnalysis from "./ImageAnalysis";
 import {ImageAnalysisContext} from "../contexts/ImageAnalysisContext";
-import {IsLoadingContext} from "../contexts/IsLoadingContext";
 import { v4 as uuidv4 } from 'uuid';
 
 const Info = () => {
     const {imageData} = useContext(ImageAnalysisContext);
-    const {isLoading} = useContext(IsLoadingContext);
     const {resData, maxLabels, minConfidence} = imageData;
     return imageData.url? (
         <div className="info">
