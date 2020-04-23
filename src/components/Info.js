@@ -9,7 +9,7 @@ const Info = () => {
     return imageData.url? (
         <div className="info">
             <h3>Analysis</h3>
-            <div className="info-params">Max Labels: {maxLabels} | Min confidence: {minConfidence}% </div>
+            <div className="info-params">Max Labels: {maxLabels} <span style={{color:"#37667e", fontWeight: "bold"}}> | </span>Min confidence: {minConfidence}% </div>
             <div>
                 {resData.Labels.map(label => {
                     return(<ImageAnalysis label={label} key={uuidv4()} />)

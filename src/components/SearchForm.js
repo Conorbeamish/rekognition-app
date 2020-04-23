@@ -41,10 +41,10 @@ const SearchForm = () => {
     return ( 
         <div className="search">
             <h3>Search for an image</h3>
-            <p>To get started simply input the image url below, you may have to right click an image you find online and select "copy image url".</p>
+            <p>To get started simply input the image url below, you may have to right click an image you find online and select "copy image address" to get the proper url.</p>
             <div style={{height: "1rem"}}>{errors}</div>
             <form onSubmit={handleSubmit}>
-                <label for="url">Image Url: </label>
+                <label for="url">Image Address: </label>
                 <input type="text" name="url" onChange = {handleChange} value={data.url} placeholder="Enter image url..." autocomplete="off"/>
                 <label for="maxLabels">Max Labels:</label>
                 <input type="number" name="maxLabels" min="1" max="50" onChange = {handleChange} value={data.maxLabels}/>

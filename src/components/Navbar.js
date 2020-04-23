@@ -1,7 +1,17 @@
 import React from 'react';
 import Particles from "react-particles-js";
+import {useSpring, animated} from "react-spring";
 
 const Navbar = () => {
+    const animate = useSpring({
+        config:{
+            delay: 500,
+            duration: 1500
+        },
+        opacity: 1,
+        from: {opacity: 0}
+
+    })
     return ( 
         <div className="nav">
             <Particles 
@@ -27,12 +37,12 @@ const Navbar = () => {
                     }
             	}}
             />
-            <div className="nav-container">
+            <animated.div style={animate} className="nav-container">
                 <h1>Image Analyser</h1>
                 <div className="nav-text">
                     Use machine learning to identify features in your images
                 </div>
-            </div>
+            </animated.div>
         </div>
     );
 }

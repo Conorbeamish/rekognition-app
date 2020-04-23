@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import ImageAnalysisProvider from './contexts/ImageAnalysisContext';
 import IsLoadingContextProvider from './contexts/IsLoadingContext';
 import Homepage from "./components/Homepage.js";
+import Footer from "./components/Footer.js"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Homepage />  
         </ImageAnalysisProvider>
       </IsLoadingContextProvider>
+      <Footer />
     </div>
   );
 }
